@@ -4,9 +4,9 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+  res.render('index', { title: 'Express' });
 };
 
 exports.submit = function(req, res){
-	res.render('submit', {})
+	res.render('submit');
 };
