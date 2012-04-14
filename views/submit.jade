@@ -1,1 +1,13 @@
-h2 Submit 
+h2 Submit
+  form(action='/submit', method='post')
+    p Name
+      input(type='text', name='name', size=50)
+    p Description
+      input(type='textarea', name='description', rows=7, cols=50)
+    p Url
+      input(type='text', name='url', size=50)
+    p Hiring?
+      input(type='checkbox', name='hiring')
+    p Url for Job Site
+      input(type='text', name='hiringUrl', size=50)
+    input(type='submit')
