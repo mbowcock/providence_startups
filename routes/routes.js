@@ -21,3 +21,8 @@ exports.index = function(req, res){
 exports.submit = function(req, res){
 	res.render('submit');
 };
+
+exports.submitHandle = function(req, res){
+	client.query('insert into startups (name, description, url, hiring, "hiringUrl") values ($1, $2, $3, $4, $5)', [req.body.name, req.body.description, req.body.url, req.body.hiring, req.body.hiringUrl]);
+	res.redirect('/');
+};
