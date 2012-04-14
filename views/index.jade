@@ -7,7 +7,9 @@ section#content
         article
           p
             b
-              #{row.name} - 
+              a.name(href='#{row.url}') #{row.name}
+            |  - 
             #{row.description}
             - if(row.hiring)
-              div.hiring Hiring
+              div.hiring 
+                a(href='#{row.hiringUrl}') Hiring
