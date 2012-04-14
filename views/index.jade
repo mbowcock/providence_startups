@@ -5,5 +5,9 @@ section#content
     each row in dbRows
       li
         article
-          p #{row.name}
-          div.hiring Hiring
+          p
+            b
+              #{row.name} - 
+            #{row.description}
+            - if(row.hiring)
+              div.hiring Hiring
