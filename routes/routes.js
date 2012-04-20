@@ -21,6 +21,8 @@ exports.submit = function(req, res){
 };
 
 exports.submitHandle = function(req, res){
+	var client = new pg.Client(connectionString);
+	client.connect();
 	client.query('insert into startups (name, description, url, hiring, "hiringUrl") values ($1, $2, $3, $4, $5)', [req.body.name, req.body.description, req.body.url, req.body.hiring, req.body.hiringUrl]);
 	res.redirect('/');
 };
