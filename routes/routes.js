@@ -1,24 +1,17 @@
 /*
  * GET index
  */
-var pg = require('pg')
-  , connectionString = 'postgres://postgres:513556@localhost/startups';
-
-//client = new pg.Client(connectionString);
-//client.connect();
+var pg = require('pg'), 
+    connectionString = 'postgres://postgres:513556@localhost/startups';
 
 exports.index = function(req, res){
-	var rows=[];
-	//query = client.query('select id, name, description, url, hiring, "hiringUrl" from startups');
-	//query.on('row', function(row){
-	//	rows.push(row);
-	//});
-	//query.on('end', function(row){
-	//	res.render('index', { dbRows: rows });
-	//});
 	pg.connect(connectionString, function(err, client){
-		client.query('select id, name, description, url, hiring, "hiringUrl" from startups', function(err, result){
-			res.render('index', { dbRows: result.rows });
+		client.query('select id, name, description, url, hiring, "hiringUrl" from startups where active = TRUE', function(err, result){
+			if(!result){
+				res.return("no data found");
+			} else {
+				res.render('index', { dbRows: result.rows });
+			}
 		});
 	});
 };

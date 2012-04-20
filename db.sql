@@ -15,6 +15,7 @@ CREATE TABLE startups
 	  hiring boolean,
 	  "hiringUrl" text,
 	  "dateAdded" timestamp without time zone NOT NULL DEFAULT now(),
+	  active boolean DEFAULT false, 
 	  CONSTRAINT pkid PRIMARY KEY (id )
 )
 WITH (
