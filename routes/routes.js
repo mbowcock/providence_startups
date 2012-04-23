@@ -2,7 +2,7 @@
  * GET index
  */
 var pg = require('pg'), 
-    connectionString = 'postgres://postgres:513556@localhost/startups';
+    connectionString = 'postgres://postgres:password@localhost/startups';
 
 exports.index = function(req, res){
 	pg.connect(connectionString, function(err, client){
