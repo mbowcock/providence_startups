@@ -1,8 +1,6 @@
-/*
- * GET index
- */
-var pg = require('pg'), 
-    connectionString = 'postgres://postgres:513556@localhost/startups';
+var db = require('../config.js'),
+	pg = require('pg'), 
+    connectionString = db.config.connectionString;
 
 exports.index = function(req, res){
 	pg.connect(connectionString, function(err, client){
