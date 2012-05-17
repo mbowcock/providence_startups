@@ -11,5 +11,5 @@ This is very much a work in progress and may break, set your expectations accord
 Check out the site here - http://providencestartups.com
 
 Development happens in master. Deploy branch contains ga tracking code.
-To deploy I logon to server and do:
+To deploy I logon to server and run:
 > git pull origin deploy
