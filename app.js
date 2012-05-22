@@ -27,8 +27,8 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.get('/submit', routes.submit);
 app.post('/submit', routes.submitHandle);
-app.get('/api', routes.api);
-app.get('/api/:operation', routes.api.process);
+app.get('/api', routes.show_documentation);
+app.get('/api/startups/:operation.:format', routes.api);
 
 app.listen(3001, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

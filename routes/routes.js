@@ -22,20 +22,23 @@ exports.index = function(req, res){
 	});
 };
 
-exports.api = function(req, res){
+exports.show_documentation = function(req, res){
 	res.render('api');
 };
 
-exports.api.process = function(req, res){
+exports.api = function(req, res){
 	// the db access needs to refactored out of here. Its the same code as the index route handler.
 	var operation = req.params.operation;
-	if(operation== "startups"){
+	if(operation == "list"){
 		pg.connect(connectionString, function(err, client){
 			client.query('select id, name, description, url, hiring, "hiringUrl" from startups', function(err, result){
 				if(!result){
 					res.return("no data found");
 				} else {
-					res.send(result.rows);
+					var json = JSON.stringify(result.rows);
+					console.log(json);
+					res.writeHead(200, {'Content-type':'application/json', 'content-length':json.length});
+					res.end(json);
 				}
 			});
 		});
