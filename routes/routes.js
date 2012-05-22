@@ -36,7 +36,6 @@ exports.api = function(req, res){
 					res.return("no data found");
 				} else {
 					var json = JSON.stringify(result.rows);
-					console.log(json);
 					res.writeHead(200, {'Content-type':'application/json', 'content-length':json.length});
 					res.end(json);
 				}
