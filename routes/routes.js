@@ -35,10 +35,10 @@ exports.api = function(req, res){
 				if(!result){
 					res.return("no data found");
 				} else {
-					var json = JSON.stringify(result.rows);
-					console.log(json);
-					res.writeHead(200, {'Content-type':'application/json', 'content-length':json.length});
-					res.end(json);
+					//var json = JSON.stringify(result.rows);
+					//res.writeHead(200, {'Content-type':'application/json', 'content-length':json.length});
+					//lengthres.write(json);
+					res.send(result.rows);
 				}
 			});
 		});
