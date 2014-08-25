@@ -31,7 +31,7 @@ exports.api = function(req, res){
 	var operation = req.params.operation;
 	if(operation == "list"){
 		pg.connect(connectionString, function(err, client){
-			client.query('select id, name, description, url, hiring, "hiringUrl" from startups', function(err, result){
+			client.query('select id, name, description, url, hiring, "hiringUrl" from startups where active=TRUE', function(err, result){
 				if(!result){
 					res.return("no data found");
 				} else {
