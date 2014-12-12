@@ -1,4 +1,4 @@
-!!! html
+doctype html
 html(lang="en")
   head
     title Providence Startups
@@ -17,6 +17,7 @@ html(lang="en")
     | var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     | })();
     | </script> 
-  body!= body
+  body
+    block content
 footer
   | <p><a href="/submit">Submit a startup</a> / <a href="/api">API</a> / Project by <a href="https://twitter.com/mbowcock">@mbowcock</a> / Source at <a href="http://github.com/mbowcock/providence_startups">github</a>

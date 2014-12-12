@@ -1,15 +1,18 @@
-header 
-  h1 Providence Startups
-h2 Submit
-  form(action='/submit', method='post')
-    p Name <br />
-      input(type='text', name='name', size=50)
-    p Description <br />
-      | <textarea name='description' rows='7' cols='35'></textarea>
-    p Url <br />
-      input(type='text', name='url', size=50)
-    p Hiring? <br />
-      input(type='checkbox', name='hiring')
-    p Url for Job Site <br />
-      input(type='text', name='hiringUrl', size=50)
-    input(type='submit')
+extends layout
+
+block content
+  header 
+    h1 Providence Startups
+  h2 Submit
+    form(action='/submit', method='post')
+      p Name <br />
+        input(type='text', name='name', size=50)
+      p Description <br />
+        | <textarea name='description' rows='7' cols='35'></textarea>
+      p Url <br />
+        input(type='text', name='url', size=50)
+      p Hiring? <br />
+        input(type='checkbox', name='hiring')
+      p Url for Job Site <br />
+        input(type='text', name='hiringUrl', size=50)
+      input(type='submit')

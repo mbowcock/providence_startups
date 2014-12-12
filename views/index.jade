@@ -1,15 +1,18 @@
-header 
-  h1 Providence Startups
-section#content
-  ol
-    each row in dbRows
-      li
-        article
-          p
-            b
-              a.name(href='#{row.url}') #{row.name}   
-            if(row.hiring)
-              span.hiring 
-                a(href='#{row.hiringUrl}') Hiring
-            | <br />
-            #{row.description}
+extends layout
+
+block content
+  header 
+    h1 Providence Startups
+  section#content
+    ol
+      each row in dbRows
+        li
+          article
+            p
+              b
+                a.name(href='#{row.url}') #{row.name}   
+              if(row.hiring)
+                span.hiring 
+                  a(href='#{row.hiringUrl}') Hiring
+                | <br />
+                =row.description

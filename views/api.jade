@@ -1,8 +1,10 @@
-header 
-  h1 Providence Startups
-section#content
-  h2 API Documentation
-  h3 The API is read only and only consists of one url. 
-  a(href='/api/startups/list.json') http://providencestartups.com/api/startups/list.json
-  p The API is an experiment and will be changing.
- 
+extends layout
+
+block content
+  header 
+    h1 Providence Startups
+  section#content
+    h2 API Documentation
+    h3 The API is read only and only consists of one url. 
+    a(href='/api/startups/list.json') http://providencestartups.com/api/startups/list.json
+    p The API is an experiment and will be changing.
